@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: rgba(23, 24, 35);
+}
+
+.app.whiteBg {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+}
+
+.header {
+  width: 100%;
+  height: 400px;
+  background-image: url("./images/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.header.whiteBg {
+  background-image: url("./images/bg-desktop-light.jpg");
+}
+
+.header img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.todos {
+  width: 100%;
+  max-width: 600px;
+  position: absolute;
+  top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.todosHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todosHeader img {
+  cursor: pointer;
+}
+
+.todosHeader h1 {
+  color: white;
+  font-size: 2.75rem;
+  letter-spacing: 10px;
+}
+
+.todosInfo {
+  width: 100%;
+}
+
+.input_container {
+  margin-top: 50px;
+  width: 100%;
+  position: relative;
+}
+
+.input_container input {
+  background-color: rgba(37, 39, 61);
+  box-shadow: rgba(0 0 0) 0px 35px 50px -15px;
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  padding-left: 50px;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.input_container.whiteBg input {
+  background-color: white;
+  box-shadow: rgba(255 255 255) 0px 5px 5px -10px;
+  color: black;
+}
+
+.input_container .circle {
+  border: 1px solid rgba(57, 58, 75);
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  left: 15px;
+  top: 25px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.todos_container {
+  margin-top: 50px;
+  width: 100%;
+  background-color: rgba(37, 39, 61);
+  overflow-y: auto;
+  overflow-x: auto;
+  max-height: 400px;
+  border-radius: 7px;
+}
+
+.todos_container.active {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.todo_container {
+  width: 100%;
+  position: relative;
+}
+
+.todo_container img {
+  cursor: pointer;
+}
+
+.todo_container .circle {
+  border: 1px solid rgba(57, 58, 75);
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  left: 15px;
+  top: 25px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  /* border: none; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo_container .circle img {
+  display: none;
+}
+
+.todo_container .circle.active {
+  background: linear-gradient(
+    90deg,
+    rgba(87, 221, 255) 0%,
+    rgba(192, 88, 243) 100%
+  );
+}
+
+.todo_container .circle.active img {
+  display: inline-block;
+}
+
+.todo {
+  width: 100%;
+  color: lightgrey;
+  height: 50px;
+  cursor: pointer;
+  padding: 10px 30px 20px 50px;
+  font-size: 1.1rem;
+  list-style-type: none;
+  border-bottom: 1px solid rgba(57, 58, 75);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.todo.active {
+  text-decoration: line-through;
+  color: rgba(57, 57, 75);
+}
+
+.todo.whiteBg {
+  background-color: white;
+  color: black;
+  border-color: rgba(57, 58, 75);
+}
+
+.todo.whiteBg.active {
+  color: rgba(57, 58, 75);
+}
+
+.delete-icon {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  transform: translateY(-50%);
+}
+
+.todo_container:hover > .delete-icon {
+  display: inline-block;
+  z-index: 100;
+}
+
+.footer {
+  width: 100%;
+  color: white;
+  background-color: rgb(37, 39, 61);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(106, 108, 134);
+}
+
+.footer.whiteBg {
+  background-color: white;
+  color: black;
+}
+
+.footer .clear:hover {
+  color: #ccc;
+  cursor: pointer;
+}
+
+.footer .clear.active {
+  color: rgb(41, 41, 238);
+}
+
+.types {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 680px) {
+  .todos {
+    width: 90%;
+  }
+  .types {
+    width: 100%;
+    justify-content: center;
+  }
+  .left {
+    display: none;
+  }
+}
